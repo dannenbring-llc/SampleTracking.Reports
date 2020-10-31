@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<IST_User>
+  <UserID>
+    37
+  </UserID>
+  <UserName>
+    Mike Dannenbring
+  </UserName>
+  <StatusID>
+    A
+  </StatusID>
+  <CreateBy>
+    1
+  </CreateBy>
+  <CreateDate>
+    2020-08-02T14:21:39.860
+  </CreateDate>
+  <ModifyBy>
+    1
+  </ModifyBy>
+  <ModifyDate>
+    2020-08-02T14:21:39.860
+  </ModifyDate>
+  <UserNameNormalized>
+    MIKE DANNENBRING
+  </UserNameNormalized>
+  <PasswordHash>
+    AQAAAAEAACcQAAAAEJUrXIq2WKRtSvkjRtw/4i1ozYNQgGESl4p9hnSiml6dBH13IflJVIT80em8LZ+zzg==
+  </PasswordHash>
+  <Email>
+    mdannenbring@gmail.com
+  </Email>
+  <EmailNormalized>
+    MDANNENBRING@GMAIL.COM
+  </EmailNormalized>
+</IST_User>
+

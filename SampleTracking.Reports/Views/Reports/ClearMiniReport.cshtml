@@ -1,0 +1,28 @@
+﻿@model SampleTracking.Reports.ViewModels.ClearMiniViewModel
+
+@{
+    ViewBag.Title = "ClearMiniView";
+}
+
+<h2>Clear Mini Report</h2>
+
+<form class="form-inline" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Clear Mini Parameters</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="form-group; center-block" style="margin-top: 2px; width: 100%;">
+                    <label>Log Number:</label>
+                    @Html.TextBoxFor(m => m.LogNumber, new { type = "text", @class = "form-control input-sm" })
+                </div>
+                <div class="form-group; center-block" style="margin-top: 2px; width: 100%;">
+                    <label>Pat ID:</label>
+                    @Html.TextBoxFor(m => m.PatId, new { type = "text", @class = "form-control input-sm" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success" name="ClearMiniSubmit" value="true">Run Report</button>
+</form>

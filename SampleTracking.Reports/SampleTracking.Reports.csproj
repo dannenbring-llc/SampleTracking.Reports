@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA04CA95-A972-4B55-BFA2-B74408A55B2D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SampleTracking.Reports</RootNamespace>
+    <AssemblyName>.2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44361</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="IgtReports\DataTemplates\ClearMini.cs">
+      <DependentUpon>ClearMini.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IgtReports\DataTemplates\ClearMini.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClearMini.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IST_ActiveAL_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_AliquotLocation.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_AliquotLocation_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_ApplicationRole.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_ApplicationUserRole.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Arch_AliquotLocation.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Arch_User.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Drawer.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_DrawerSlot.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ist_drawerSlot_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ist_drawer_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Exception.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_ExceptionType.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Freezer.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_FreezerLocation_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Freezer_VW.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_get_sample_aliquot_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_OpenSessionSampleAliquot_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_OpenSessionTray_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_SampleAliquot.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_ScanDetails.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Scans.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Session.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_SessionAL_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_SessionMissingSA_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_SessionOrphan_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_SessionRelocate_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_SessionSampleAliquot_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_SessionSA_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ist_SessionType.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_SessionUnknownSA_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Status.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Subtype.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_Tray.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_TrayLocation.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_TrayLocation_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_TrayMap.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_TrayType.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_tray_map_vw.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IST_User.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClearMiniRecord.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IgtReports\ClearMini.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClearMini.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="IgtReports\TestReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="SampleTrackingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleTrackingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SampleTrackingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SampleTrackingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleTrackingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\IgtRepository.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="sp_get_samples_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_get_sample_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_get_scan_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_get_sub_types_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_getAliquot_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetApplicationRoles_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetDrawerByDescription_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetDrawerById_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetDrawersFree_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetDrawerSlotsById_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetDrawerSlotsFree_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetDrawerSlots_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetDrawers_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetFreezerMap_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetFreezers_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetScanDetails_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetScansByTray_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetScans_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetSessionMissingSampleAliquots_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetSessionOrphanAliquots_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetSessionRelocateAliquots_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetSessionScan_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetSessions_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetSessionUnknownAliquots_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetSession_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetTrayByDrawerSlot_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetTrayById_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetTrayByName_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetTrayBySample_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetTrayData_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetTrayLocation_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetTrayMapBySample_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetTrayMap_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetTrays_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IST_GetUsers_Result.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>SampleTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ClearMiniViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\igt.mdb" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="IgtReports\DataTemplates\User.xml" />
+    <Content Include="SampleTrackingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleTrackingModel.edmx</DependentUpon>
+      <LastGenOutput>SampleTrackingModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SampleTrackingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleTrackingModel.edmx</DependentUpon>
+      <LastGenOutput>SampleTrackingModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="SampleTrackingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleTrackingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="SampleTrackingModel.edmx.diagram">
+      <DependentUpon>SampleTrackingModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="IgtReports\DataTemplates\ClearMini.xsc">
+      <DependentUpon>ClearMini.xsd</DependentUpon>
+    </Content>
+    <None Include="IgtReports\DataTemplates\ClearMini.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClearMini.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="IgtReports\DataTemplates\ClearMini.xss">
+      <DependentUpon>ClearMini.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\Production.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Reports\ClearMiniReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IgtReports\ClearMini.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClearMini.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="IgtReports\TestReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59745</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44361/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

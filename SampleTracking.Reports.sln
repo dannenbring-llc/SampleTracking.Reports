@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTracking.Reports", "SampleTracking.Reports\SampleTracking.Reports.csproj", "{BA04CA95-A972-4B55-BFA2-B74408A55B2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA04CA95-A972-4B55-BFA2-B74408A55B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA04CA95-A972-4B55-BFA2-B74408A55B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA04CA95-A972-4B55-BFA2-B74408A55B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA04CA95-A972-4B55-BFA2-B74408A55B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B4A2C70-2CE5-48F2-BBAA-1F4C0A6D5882}
+	EndGlobalSection
+EndGlobal
