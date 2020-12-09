@@ -53,6 +53,10 @@ namespace SampleTracking.Reports.Controllers
             Response.ClearContent();
             Response.ClearHeaders();
 
+            //rd.PrintOptions.PrinterName = @"\\140.251.218.90\Brother PT-P750W (Copy 1)";
+            rd.PrintOptions.PrinterName = "NPIF1BE71 (HP LaserJet M402dn)";
+            rd.PrintToPrinter(1, false, 0, 0);
+
             rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, System.Web.HttpContext.Current.Response, false, "Report");
             return RedirectToAction("Index", "Reports");
 
@@ -89,7 +93,33 @@ namespace SampleTracking.Reports.Controllers
             Response.ClearContent();
             Response.ClearHeaders();
 
-            rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, System.Web.HttpContext.Current.Response, false, "Report");
+            //var report = rd.ExportToStream(ExportFormatType.PortableDocFormat);
+
+            //rd.PrintOptions.PrinterName = "NPIF1BE71 (HP LaserJet M402dn)";
+            rd.PrintOptions.PrinterName = @"\\140.251.218.90\Brother PT-P750W (Copy 1)";
+
+            //rd.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
+            //rd.PrintOptions.PaperOrientation = PaperOrientation.Landscape;
+            //rd.PrintOptions.PaperSize = PaperSize.DefaultPaperSize;
+
+            var printerOptions = rd.PrintOptions;
+            var oPrinterSettings = new System.Drawing.Printing.PageSettings();
+            oPrinterSettings.PrinterSettings.PrinterName = @"\\140.251.218.90\Brother PT-P750W (Copy 1)";
+            oPrinterSettings.PaperSize = new System.Drawing.Printing.PaperSize('0.94"', 94, 6);
+
+            foreach (System.Drawing.Printing.PaperSize oPaperSize in oPrinterSettings.PrinterSettings.PaperSizes)
+            {
+                if (oPaperSize.PaperName == "14x7")
+                {
+                    rd.PrintOptions.PaperSize = (PaperSize)oPaperSize.RawKind;
+                }
+            }
+
+            //rd.PrintToPrinter(1, false, 0, 0);
+
+            rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, System.Web.HttpContext.Current.Response, true, "Report");
+
+            //rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, System.Web.HttpContext.Current.Response, false, "Report");
             return RedirectToAction("Index", "Reports");
 
             //Stream stream = rd.ExportToStream(ExportFormatType.PortableDocFormat);

@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SampleTracking.Reports</RootNamespace>
-    <AssemblyName>.2</AssemblyName>
+    <AssemblyName>SampleTracking.Reports</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -145,6 +145,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ClearMini.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IgtReports\Old\ClearMini.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClearMini.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="IST_ActiveAL_vw.cs">
       <DependentUpon>SampleTrackingModel.tt</DependentUpon>
@@ -515,6 +521,10 @@
       <LastGenOutput>ClearMini.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <EmbeddedResource Include="IgtReports\Old\ClearMini.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClearMini.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="IgtReports\TestReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TestReport.cs</LastGenOutput>
