@@ -138,6 +138,19 @@
     </Compile>
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="IgtReports\ClearMiniNew1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClearMiniNew.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="IgtReports\ClearMiniUpdate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClearMiniUpdate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="IgtReports\DataTemplates\ClearMini.cs">
       <DependentUpon>ClearMini.xsd</DependentUpon>
     </Compile>
@@ -145,6 +158,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ClearMini.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IgtReports\DataTemplates\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IgtReports\DataTemplates\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="IgtReports\Old\ClearMini.cs">
       <AutoGen>True</AutoGen>
@@ -272,6 +293,7 @@
     <Compile Include="IST_User.cs">
       <DependentUpon>SampleTrackingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClearMiniParameter.cs" />
     <Compile Include="Models\ClearMiniRecord.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -465,6 +487,17 @@
     <Content Include="IgtReports\DataTemplates\ClearMini.xss">
       <DependentUpon>ClearMini.xsd</DependentUpon>
     </Content>
+    <Content Include="IgtReports\DataTemplates\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="IgtReports\DataTemplates\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="IgtReports\DataTemplates\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Properties\PublishProfiles\Production.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -521,6 +554,15 @@
       <LastGenOutput>ClearMini.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <EmbeddedResource Include="IgtReports\ClearMiniNew.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClearMiniNew1.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IgtReports\ClearMiniUpdate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClearMiniUpdate.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="IgtReports\Old\ClearMini.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClearMini.cs</LastGenOutput>

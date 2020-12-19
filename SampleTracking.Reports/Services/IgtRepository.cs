@@ -54,6 +54,31 @@ namespace SampleTracking.Reports.Services
             return samples;
         }
 
+        public DataTable GetClearMiniDataAll(string logNumbers)
+        {
+            var samples = new DataTable();
+
+            var sqlQuery = $@" SELECT `Patients`.`ABO`, `Samples`.`LogNumber`, `Samples`.`SampleDate`, `Patients`.`HospitalID`, `Patients`.`LastName`, `Patients`.`FirstName`, `Samples`.`ABS`, `Samples`.`PatID`
+                                FROM   `Samples` `Samples` LEFT OUTER JOIN `Patients` `Patients` ON `Samples`.`PatID`=`Patients`.`PatID`
+                                WHERE  `Samples`.`LogNumber` in ({logNumbers}) ";
+
+            var cnn = new OdbcConnection(@"Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\Data\igt.mdb;");
+            try
+            {
+                cnn.Open();
+                var cmd = new OdbcCommand(sqlQuery, cnn);
+                samples.Load(cmd.ExecuteReader());
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return samples;
+        }
+
+
 
         //public List<Patient> GetPatient(string patId)
         //{
@@ -98,14 +123,14 @@ namespace SampleTracking.Reports.Services
             var patient = new DataTable();
             var sqlQuery = $@" SELECT `Patients`.`ABO`, `Patients`.`HospitalID`, `Patients`.`LastName`, `Patients`.`FirstName`
                                 From `Patients`
-                                WHERE  `Patients`.`PatID`='{patId}'";
+                                WHERE  `Patients`.`PatID` in ({patId})";
 
             var cnn = new OdbcConnection(@"Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\Data\igt.mdb;");
             try
             {
                 cnn.Open();
                 var cmd = new OdbcCommand(sqlQuery, cnn);
-                patient.Load( cmd.ExecuteReader());
+                patient.Load(cmd.ExecuteReader());
                 cnn.Close();
             }
             catch (Exception ex)
@@ -121,7 +146,7 @@ namespace SampleTracking.Reports.Services
             var sample = new DataTable();
             var sqlQuery = $@" SELECT `Samples`.`LogNumber`, `Samples`.`SampleDate`, `Samples`.`ABS`, `Samples`.`PatID`
                                 FROM   `Samples` `Samples`
-                                WHERE  `Samples`.`LogNumber`='{logNumber}'";
+                                WHERE  `Samples`.`LogNumber`in ({logNumber})";
 
             var cnn = new OdbcConnection(@"Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\Data\igt.mdb;");
             try
